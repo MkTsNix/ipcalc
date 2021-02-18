@@ -1,7 +1,9 @@
 import sys
 import ipaddress as ip
 
-# net = ip.IPv4Network('192.168.24.0/24', False)
+class bcolors:
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
 
 net = ip.IPv4Network(sys.argv[1], False)
 
@@ -14,11 +16,11 @@ if net.is_global == True:
 print(
     f'|-----------------------------------------------------------|\n'
     f'|     Network              |     {net}            |\n'
-    f'|     Netmask              |     {net.netmask}              |\n' 
-    f'|  Quantity avalible hosts |     {net.num_addresses - 2}                        |\n'
-    f'|     First host           |     {host[0]}               |\n'
-    f'|     Last host            |     {host[-1]}             |\n'
+    f'|     Netmask              |     {net.netmask}              |\n'
+    f'|     {bcolors.BOLD}First host           |     {host[0]}{bcolors.ENDC}               |\n'
+    f'|     {bcolors.BOLD}Last host            |     {host[-1]}{bcolors.ENDC}             |\n'
     f'|     Broadcast            |     {net.broadcast_address}             |    \n'
+    f'|  Quantity avalible hosts |     {net.num_addresses - 2}                        |\n'
     f'|     Public               |     {isGlobal}                      |\n'
     f'|-----------------------------------------------------------|\n'
 )
