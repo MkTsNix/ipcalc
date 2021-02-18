@@ -12,7 +12,6 @@ isGlobal = False
 if net.is_global == True:
     isGlobal = True
 
-
 print(
     f'|-----------------------------------------------------------|\n'
     f'|     Network              |     {net}            |\n'
